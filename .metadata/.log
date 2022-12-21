@@ -7313,3 +7313,102 @@ java.lang.InterruptedException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:32:27.941
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.JMyUfWsp => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:29.836
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:29.839
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@54908b8b[org.springframework.tooling.boot.ls:1.33.0.202204250653(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:29.839
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.158
+!MESSAGE Boot LS startup time from start to initialized: 2317ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.303
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HCRrHRmlisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.304
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.307
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.308
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.308
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HCRrHRml => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.309
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.320
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.327
+!MESSAGE buffering callback sts4.classpath.HCRrHRml Student_Project false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.328
+!MESSAGE executing callback sts4.classpath.HCRrHRml 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:41:32.809
+!MESSAGE executing callback sts4.classpath.HCRrHRml SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2022-12-21 13:41:46.918
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:45:09.235
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:45:09.245
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:45:09.249
+!MESSAGE buffering callback sts4.classpath.HCRrHRml Student_Project false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:45:09.250
+!MESSAGE executing callback sts4.classpath.HCRrHRml 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:45:09.288
+!MESSAGE executing callback sts4.classpath.HCRrHRml SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:46:49.373
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:46:49.380
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:46:49.386
+!MESSAGE buffering callback sts4.classpath.HCRrHRml Student_Project false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:46:49.387
+!MESSAGE executing callback sts4.classpath.HCRrHRml 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:46:49.565
+!MESSAGE executing callback sts4.classpath.HCRrHRml SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:47:03.674
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:47:03.683
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:47:03.735
+!MESSAGE buffering callback sts4.classpath.HCRrHRml Student_Project false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:47:03.736
+!MESSAGE executing callback sts4.classpath.HCRrHRml 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-12-21 13:47:03.764
+!MESSAGE executing callback sts4.classpath.HCRrHRml SUCCESS [done]

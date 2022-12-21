@@ -3,10 +3,10 @@ package com.student.entity;
 
 
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,6 +43,6 @@ public class Course {
 	@Column(name ="Course_Topics", nullable = false, length=50)
 	private String courseTopics;
 	
-	@ManyToMany(mappedBy = "course", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToMany(mappedBy = "course")
 	private Student student ;
 }

@@ -1,0 +1,31 @@
+package com.student.payloads;
+
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+public class OwnerDto {
+
+	
+	private int id;
+	
+	@NotEmpty
+	@Size(min=4,message="Name must be 4 char!!!!!")
+	private String name;
+	
+	@NotEmpty
+	@Email(message = "Please Enter Valid Email")
+	private String email;
+	
+
+	@NotEmpty
+	@Size(min=8,max=12,message = "Password must be min of 8 char and max of 12 char")
+	private String password;
+}

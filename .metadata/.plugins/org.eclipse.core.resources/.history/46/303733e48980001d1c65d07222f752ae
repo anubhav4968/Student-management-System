@@ -1,0 +1,17 @@
+package com.student.services;
+
+import java.util.List;
+
+import com.student.payloads.CourseDto;
+import com.student.payloads.StudentDto;
+
+public interface StudentService {
+
+	
+    List<StudentDto> getStudentByName();
+	StudentDto updateStudent(StudentDto student , Integer id);
+	List<CourseDto> getAllCourses();
+	
+	void leaveCourse(Integer id);
+	
+}

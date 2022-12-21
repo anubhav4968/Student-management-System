@@ -1,0 +1,13 @@
+package com.student.services;
+
+import java.util.List;
+
+import com.student.payloads.AddressDto;
+
+public interface AddressService {
+
+	 public List<AddressDto> viewAddress(Integer id);
+	    public String addAddress(Integer id,AddressDto address);
+	    public List<AddressDto> updateAddress(Integer id, Integer idx, String city, String state);
+	
+}

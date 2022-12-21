@@ -1,0 +1,91 @@
+package com.student.services;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.student.entity.Course;
+import com.student.entity.Student;
+import com.student.payloads.CourseDto;
+import com.student.payloads.StudentDto;
+import com.student.repository.CourseRepo;
+import com.student.repository.StudentRepo;
+
+public class OwnerServiceImpl implements OwnerService{
+
+	@Autowired
+	private StudentRepo studentRepo;
+	
+	@Autowired
+	private CourseRepo courseRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	//Student
+	public Student dtoToStudent(StudentDto studentDto) {
+		Student student = this.modelMapper.map(studentDto, Student.class);
+		return student;
+	}
+	
+	//
+	public StudentDto studentToDto(Student student) {
+		StudentDto studentDto = this.modelMapper.map(student, StudentDto.class);
+		return studentDto;
+	}
+	
+	//Course
+	public Course dtoToCourse(CourseDto courseDto) {
+		Course course = this.modelMapper.map(courseDto, Course.class)
+		return course;
+	}
+	
+	// 
+	public CourseDto coursetoDto(Course course) {
+		CourseDto coursedto = this.modelMapper.map(course, CourseDto.class);
+		return coursedto;
+	}
+	
+	
+	
+	@Override
+	public StudentDto admitStudents(StudentDto studentDto) {
+		Student student = this.dtoToStudent(studentDto);
+		Student savedStudent = this.studentRepo.save(student);
+		return this.studentToDto(savedStudent);
+	}
+
+	@Override
+	public CourseDto createCourse(CourseDto courseDto) {
+		Course course = this.dtoToCourse(courseDto);
+		Course savedCourse = this.courseRepo.save(course);
+		
+		return this.coursetoDto(savedCourse);
+	}
+
+	@Override
+	public StudentDto getStudents(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StudentDto deleteStudent(Integer student_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CourseDto addCourse(Integer student_id, CourseDto courseDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StudentDto> getAllStudentByCourse(Integer courseId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

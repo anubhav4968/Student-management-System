@@ -1,0 +1,11 @@
+package com.student.services;
+
+import com.student.payloads.StudentDto;
+
+public interface StudentService {
+
+	StudentDto admitStudent(StudentDto student);
+	StudentDto getStudentByName(String name);
+	StudentDto updateStudent(StudentDto student , Integer id);
+	
+}

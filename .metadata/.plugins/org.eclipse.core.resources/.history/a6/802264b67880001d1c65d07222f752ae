@@ -1,0 +1,30 @@
+package com.student.payloads;
+
+import java.util.Date;
+
+
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+public class StudentDto {
+
+	private int student_id;
+	
+	
+	private String name;
+	private String mobileNumber;
+	private String email;
+	private String password;
+	
+	
+	private Date dateOfBirth;
+	
+	private String gender;
+	
+	private String parentsName;
+}

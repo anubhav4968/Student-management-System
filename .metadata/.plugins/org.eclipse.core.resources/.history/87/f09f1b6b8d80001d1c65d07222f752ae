@@ -1,0 +1,60 @@
+package com.student.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.student.entity.Student;
+import com.student.payloads.CourseDto;
+import com.student.payloads.StudentDto;
+import com.student.repository.StudentRepo;
+
+@Service
+public class StudentServiceImpl implements StudentService{
+
+	@Autowired
+	private StudentRepo studentRepo;
+	
+	@Autowired
+	private ModelMapper moddleMapper;
+
+	//to change the studentDto to the student; 
+	public Student dtoToStudent(StudentDto dto) {
+		Student student = this.moddleMapper.map(dto, Student.class);
+		return student;
+	}
+	
+	//to change the student to the studentDto; 
+    public StudentDto studentToDto(Student student) {	
+    	StudentDto dto = this.moddleMapper.map(student, StudentDto.class);
+    	return dto;
+    }
+	
+	
+	
+
+	@Override
+	public List<CourseDto> getAllCourses() {
+		List<Student> list = this.studentRepo.findAll();
+		List<StudentDto> dto =  list.stream().map(student->this.studentToDto(student)).collect(Collectors.toList());
+		return dto;
+	}
+
+	@Override
+	public void leaveCourse(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public StudentDto updateStudent(String parentsName, String email, Integer mobileNumber, Integer student_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+}

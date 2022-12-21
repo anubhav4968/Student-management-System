@@ -1,0 +1,50 @@
+package com.student.services;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.student.entity.Address;
+import com.student.payloads.AddressDto;
+import com.student.repository.AddressRepo;
+
+@Service
+public class AddressServiceImpl implements AddressService{
+
+	@Autowired
+	private AddressRepo addressRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	public Address dtoToUser(AddressDto dto) {
+		
+		Address user = this.modelMapper.map(dto, Address.class);
+		 return user;
+	}
+	
+	public AddressDto userToDto(Address user) {
+		AddressDto dto = this.modelMapper.map(user, AddressDto.class);
+		return dto;
+	}
+
+	@Override
+	public List<AddressDto> viewAddress(Integer id) {
+		
+		return null;
+	}
+
+	@Override
+	public String addAddress(Integer id, AddressDto address) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<AddressDto> updateAddress(Integer id, Integer idx, String city, String state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

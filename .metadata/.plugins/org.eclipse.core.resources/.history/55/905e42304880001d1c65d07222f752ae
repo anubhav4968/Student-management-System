@@ -1,0 +1,24 @@
+package com.student.entity;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
+
+public class Student {
+
+	private String name;
+	private Date dateOfBirth;
+	private String gender;
+	private int student_id;
+	private String email;
+	private String mobileNumber;
+	private String parentsName;
+	
+	@OneToMany(mappedBy = "student",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Address> address = new ArrayList<>();
+	
+}

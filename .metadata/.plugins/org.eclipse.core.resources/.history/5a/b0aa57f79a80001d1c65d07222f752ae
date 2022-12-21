@@ -1,0 +1,11 @@
+package com.student.services;
+
+import com.student.payloads.CourseDto;
+import com.student.payloads.StudentDto;
+
+public interface OwnerService {
+
+	StudentDto admitStudents(StudentDto studentDto);
+	CourseDto  createCourse(CourseDto courseDto);
+	
+}

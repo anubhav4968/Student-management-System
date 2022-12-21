@@ -1,0 +1,15 @@
+package com.student.services;
+
+import java.util.List;
+
+import com.student.payloads.CourseDto;
+import com.student.payloads.StudentDto;
+
+public interface OwnerService {
+
+	StudentDto admitStudents(StudentDto studentDto);
+	CourseDto  createCourse(CourseDto courseDto);
+	List<StudentDto> getAllStudents(String name);
+	StudentDto deleteStudent(Integer student_id);
+	
+}

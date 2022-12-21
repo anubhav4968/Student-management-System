@@ -53,7 +53,7 @@ public class Student {
 	private String parentsName;
 	
 	
-	@JoinColumn(name = "id",referencedColumnName = "address_id")
+	@JoinColumn(name = "Student_Address",referencedColumnName = "address_id")
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Address> address = new ArrayList<>();
 	

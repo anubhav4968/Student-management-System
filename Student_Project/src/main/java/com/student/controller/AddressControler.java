@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.student.entity.Address;
 import com.student.exception.NullValueExcception;
 import com.student.payloads.AddressDto;
-import com.student.payloads.CourseDto;
-import com.student.payloads.StudentDto;
 import com.student.services.AddressService;
 
 import jakarta.validation.Valid;

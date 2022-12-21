@@ -3,7 +3,6 @@ package com.student.services;
 import java.util.List;
 
 import com.student.payloads.AddressDto;
-import com.student.payloads.StudentDto;
 
 public interface AddressService {
 

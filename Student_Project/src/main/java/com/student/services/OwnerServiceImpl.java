@@ -13,7 +13,6 @@ import com.student.entity.Owner;
 import com.student.entity.Student;
 import com.student.exception.ResourseNotFoundException;
 import com.student.payloads.CourseDto;
-import com.student.payloads.OwnerDto;
 import com.student.payloads.StudentDto;
 import com.student.repository.CourseRepo;
 import com.student.repository.OwnerRepo;

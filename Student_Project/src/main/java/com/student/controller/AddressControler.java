@@ -26,15 +26,15 @@ public class AddressControler {
 	@Autowired
 	private AddressService addressService;
 	
-	//get - getAllCourse
+	//get - getAllAddress
 		@GetMapping("/")
 		public ResponseEntity<List<AddressDto>> viewAddress(@Valid @PathVariable Integer student_id){
 			return ResponseEntity.ok(this.addressService.viewAddress(student_id));
 		}
 	
-	// post - adding the course 
+	// post - adding the Address
 		@PostMapping("/{student_id}")
-		public ResponseEntity<String> addCourse(@PathVariable Integer student_id,@RequestBody AddressDto addressDto){
+		public ResponseEntity<String> addAddress(@PathVariable Integer student_id,@RequestBody AddressDto addressDto){
 			AddressDto address = addressService.addAddress( student_id,addressDto);
 			if(address==null) {
 				throw new NullValueExcception("Value Not Found", "Student_Id", student_id);

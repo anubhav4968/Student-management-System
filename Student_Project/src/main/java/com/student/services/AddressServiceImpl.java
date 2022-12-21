@@ -1,13 +1,16 @@
 package com.student.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.student.entity.Address;
+import com.student.entity.Course;
 import com.student.entity.Student;
 import com.student.exception.ResourseNotFoundException;
 import com.student.payloads.AddressDto;
@@ -20,6 +23,7 @@ public class AddressServiceImpl implements AddressService{
 	@Autowired
 	private AddressRepo addressRepo;
 	
+	@Autowired
 	private StudentRepo studentRepo;
 	
 	@Autowired
@@ -38,8 +42,18 @@ public class AddressServiceImpl implements AddressService{
 
 	@Override
 	public List<AddressDto> viewAddress(Integer id) {
-		
-		return null;
+		List<Address> list = this.addressRepo.findAll();
+		List<Address> list1 = new ArrayList<>();
+		for(Address std:list) {
+			
+			
+				if(std.getAddress_id()==id) {
+					list1.add(std);
+				
+			}
+			
+		}
+		return list1.stream().map(student->this.AddressToDto(student)).collect(Collectors.toList());
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import com.student.entity.Owner;
 import com.student.entity.Student;
 import com.student.exception.ResourseNotFoundException;
 import com.student.payloads.CourseDto;
+import com.student.payloads.OwnerDto;
 import com.student.payloads.StudentDto;
 import com.student.repository.CourseRepo;
 import com.student.repository.OwnerRepo;
@@ -126,6 +127,46 @@ public class OwnerServiceImpl implements OwnerService{
 			}
 		}
 		return null;
+	}
+
+	//Owner
+			public Owner dtoToOwner(OwnerDto ownerDto) {
+				Owner owner = this.modelMapper.map(ownerDto, Owner.class);
+				return owner;
+			}
+			
+			//
+			public OwnerDto ownerToDto(Owner owner) {
+				OwnerDto ownerDto = this.modelMapper.map(owner, OwnerDto.class);
+				return ownerDto;
+			}
+	@Override
+	public OwnerDto addOwner(OwnerDto ownerDto) {
+
+		Owner owner = this.dtoToOwner(ownerDto);
+		Owner savedOwner=this.ownerRepo.save(owner);
+		return this.ownerToDto(savedOwner);
+
+	}
+
+	@Override
+	public OwnerDto updateOwner(OwnerDto ownerDto, Integer ownerId) {
+		
+		Owner owner = this.ownerRepo.findById(ownerId).orElseThrow(()-> new ResourseNotFoundException("Owner", "OwnerId", ownerId));
+		owner.setEmail(ownerDto.getEmail());
+		owner.setName(ownerDto.getName());
+		owner.setPassword(ownerDto.getPassword());
+		
+		Owner updatedOwner = this.ownerRepo.save(owner);
+		
+		return this.ownerToDto(updatedOwner);
+	}
+
+	@Override
+	public void deleteOwner(Integer ownerId) {
+		
+		Owner owner = this.ownerRepo.findById(ownerId).orElseThrow(()-> new ResourseNotFoundException("Owner", "OwnerId", ownerId));
+		this.ownerRepo.delete(owner);
 	}
    
 }

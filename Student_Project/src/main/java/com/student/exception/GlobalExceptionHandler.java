@@ -13,8 +13,8 @@ import com.student.payloads.ApiResponse;
 
 public class GlobalExceptionHandler {
 
-	@ExceptionHandler(ResourseNotFoundException.class)
-	public ResponseEntity<ApiResponse > resourceBnotFoundExceptionHAndler(ResourseNotFoundException ex){
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiResponse > resourceBnotFoundExceptionHAndler(ResourceNotFoundException ex){
 		String message = ex.getMessage();
 		ApiResponse apiResponce = new ApiResponse(message,false);
 		return new ResponseEntity<ApiResponse> (apiResponce , HttpStatus.NOT_FOUND);

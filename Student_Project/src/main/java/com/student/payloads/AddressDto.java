@@ -1,7 +1,10 @@
 package com.student.payloads;
+
+
 import com.student.entity.Student;
 
 import jakarta.validation.constraints.NotEmpty;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,8 +14,8 @@ import lombok.Setter;
 @Setter
 public class AddressDto {
 
+	private int addressId;
 	
-	private int address_id;
 	@NotEmpty
 	private String area;
 	
@@ -28,6 +31,5 @@ public class AddressDto {
 	@NotEmpty
 	private String addressType;
 	
-	
-	private Student student;
+	private StudentDto student;
 }

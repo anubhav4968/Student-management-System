@@ -16,7 +16,7 @@ import com.student.payloads.ApiResponse;
 //import com.student.payloads.CourseDto;
 import com.student.payloads.StudentDto;
 //import com.student.services.StudentService;
-import com.student.services.StudentService;
+import com.student.service.StudentService;
 
 import jakarta.validation.Valid;
 

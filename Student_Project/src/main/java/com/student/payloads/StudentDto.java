@@ -3,7 +3,9 @@ package com.student.payloads;
 import java.util.Date;
 
 import com.student.entity.Address;
-import com.student.entity.Course;
+
+//import com.student.entity.Address;
+//import com.student.entity.Course;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -20,7 +22,7 @@ public class StudentDto {
 
 	private int student_id;
 	
-	@NotEmpty
+//	@NotEmpty
 	@Size(min=4 ,message= "Name must be min of 4 character!!!")
 	private String name;
 	
@@ -32,20 +34,20 @@ public class StudentDto {
 	@Email(message = "Please Enter Valid Email")
 	private String email;
 	
-	@NotEmpty
+//	@NotEmpty
 	@Pattern(regexp="[a-zA-Z0-9]{6,12}",message="Password must contain between 6 to 12 characters. Must be alphanumeric with both Upper and lowercase characters.")
 	private String password;
 	
-	@NotEmpty
-	private Date dateOfBirth;
+//	@NotEmpty
+	private String dateOfBirth;
 	
-	@NotEmpty
+//	@NotEmpty
 	private String gender;
 	
 	@NotEmpty
     private String parentsName;
 	
-	private Course course;
+//	private Course course;
+
 	
-	private Address address;
 }

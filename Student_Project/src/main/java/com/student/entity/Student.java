@@ -11,8 +11,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -53,10 +51,4 @@ public class Student {
 	
 	@OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
 	private List<Address> address = new ArrayList<>();
-
-
-//	@ManyToMany( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-//	@JoinTable(name = "Student_courses",joinColumns =@JoinColumn(name= "course_id"))
-//	private List<Course> course = new ArrayList<>();
-	
 }

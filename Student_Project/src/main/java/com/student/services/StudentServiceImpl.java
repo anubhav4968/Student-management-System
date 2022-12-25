@@ -7,12 +7,15 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.student.entity.Course;
+import com.student.entity.Address;
+//import com.student.entity.Course;
 import com.student.entity.Student;
 import com.student.exception.ResourseNotFoundException;
-import com.student.payloads.CourseDto;
+import com.student.payloads.AddressDto;
+//import com.student.payloads.CourseDto;
 import com.student.payloads.StudentDto;
-import com.student.repository.CourseRepo;
+import com.student.repository.AddressRepo;
+//import com.student.repository.CourseRepo;
 import com.student.repository.StudentRepo;
 
 @Service
@@ -21,9 +24,9 @@ public class StudentServiceImpl implements StudentService{
 	@Autowired
 	private StudentRepo studentRepo; 
 	
-	@Autowired
-	private CourseRepo courseRepo;
-	
+//	@Autowired
+//	private CourseRepo courseRepo;
+//	
 	
 	@Autowired
 	private ModelMapper moddleMapper;
@@ -40,31 +43,31 @@ public class StudentServiceImpl implements StudentService{
     	return dto;
     }
 	
-  //to change the CourseDto to the course; 
-  	public Course dtoToCourse(CourseDto dto) {
-  		Course course = this.moddleMapper.map(dto, Course.class);
-  		return course;
-  	}
-  	
-  	//to change the course to the courseDto; 
-      public CourseDto courseToDto(Course course) {	
-      CourseDto dto = this.moddleMapper.map(course, CourseDto.class);
-      	return dto;
-      }
+//  //to change the CourseDto to the course; 
+//  	public Course dtoToCourse(CourseDto dto) {
+//  		Course course = this.moddleMapper.map(dto, Course.class);
+//  		return course;
+//  	}
+//  	
+//  	//to change the course to the courseDto; 
+//      public CourseDto courseToDto(Course course) {	
+//      CourseDto dto = this.moddleMapper.map(course, CourseDto.class);
+//      	return dto;
+//      }
 	
 
-	@Override
-	public List<CourseDto> getAllCourses() {
-		List<Course> list = this.courseRepo.findAll();
-		List<CourseDto> dto =  list.stream().map(student->this.courseToDto(student)).collect(Collectors.toList());
-		return dto;
-	}
-
-	@Override
-	public void leaveCourse(Integer course_id) {
-		Course course = this.courseRepo.findById(course_id).orElseThrow(()-> new ResourseNotFoundException("Student", "Course", course_id));
-		this.courseRepo.delete(course);
-	}
+//	@Override
+//	public List<CourseDto> getAllCourses() {
+//		List<Course> list = this.courseRepo.findAll();
+//		List<CourseDto> dto =  list.stream().map(student->this.courseToDto(student)).collect(Collectors.toList());
+//		return dto;
+//	}
+//
+//	@Override
+//	public void leaveCourse(Integer course_id) {
+//		Course course = this.courseRepo.findById(course_id).orElseThrow(()-> new ResourseNotFoundException("Student", "Course", course_id));
+//		this.courseRepo.delete(course);
+//	}
 
 	@Override
 	public StudentDto updateStudent(StudentDto studentDto, Integer student_id) {
@@ -73,9 +76,27 @@ public class StudentServiceImpl implements StudentService{
 		student.setEmail(studentDto.getEmail());
 		student.setParentsName(studentDto.getParentsName());
 		student.setMobileNumber(studentDto.getMobileNumber());
-		
 		Student updatedStudent = this.studentRepo.save(student);
 		return this.studentToDto(updatedStudent);
+	}
+
+	
+	//Address --->
+	
+	@Autowired
+	private AddressRepo addressRepo;
+	
+	@Override
+	public AddressDto updateAddress(AddressDto addressDto, Integer address_id) {
+		Address address = this.addressRepo.findById(address_id).orElseThrow(()->new ResourseNotFoundException("Address", "AddressId", address_id));
+		address.setAddressType(addressDto.getAddressType());
+		address.setArea(addressDto.getArea());
+		address.setDistrict(addressDto.getDistrict());
+		address.setPincode(addressDto.getPincode());
+		address.setState(addressDto.getState());
+		
+		Address updatedAddress = this.addressRepo.save(address);
+		return this.moddleMapper.map(updatedAddress, AddressDto.class);
 	}
 	
 	

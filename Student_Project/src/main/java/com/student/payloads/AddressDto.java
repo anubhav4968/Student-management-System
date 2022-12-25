@@ -20,7 +20,7 @@ public class AddressDto {
 	private String state;
 	
 	@NotEmpty
-	private String distrct;
+	private String district;
 	
 	@NotEmpty
 	private String pincode;

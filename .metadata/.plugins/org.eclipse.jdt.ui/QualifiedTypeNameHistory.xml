@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="com.student.services.StudentService"/>
     <fullyQualifiedTypeName name="org.springframework.web.service.annotation.PutExchange"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatusCode"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
@@ -24,7 +23,6 @@
     <fullyQualifiedTypeName name="jakarta.validation.constraints.Email"/>
     <fullyQualifiedTypeName name="jakarta.validation.constraints.NotEmpty"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
-    <fullyQualifiedTypeName name="com.student.payloads.OwnerDto"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="com.student.entity.Login"/>
+    <fullyQualifiedTypeName name="com.student.payloads.OwnerDto"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
 </qualifiedTypeNameHistroy>

@@ -10,11 +10,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@Entity
-@Table(name="Owner")
+@Table(name ="Owner")
 public class Owner {
 
 	@Id

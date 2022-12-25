@@ -11,11 +11,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,7 +22,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="Student")
 public class Student {
 
 	@Id
@@ -35,7 +32,7 @@ public class Student {
 	private String name;
 	
 	@Column(name = "Dob" , nullable = false, length=100)
-	private Date dateOfBirth;
+	private String dateOfBirth;
 	
 	@Column(name = "Gender", nullable = false , length=10)
 	private String gender;
@@ -53,12 +50,13 @@ public class Student {
 	private String parentsName;
 	
 	
-	@JoinColumn(name = "Student_Address",referencedColumnName = "address_id")
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Address> address = new ArrayList<>();
 	
-	@ManyToMany( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@JoinTable(name = "Student_courses",joinColumns =@JoinColumn(name= "course_id"))
-	private List<Course> course = new ArrayList<>();
+	@OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+	private List<Address> address = new ArrayList<>();
+
+
+//	@ManyToMany( cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//	@JoinTable(name = "Student_courses",joinColumns =@JoinColumn(name= "course_id"))
+//	private List<Course> course = new ArrayList<>();
 	
 }
